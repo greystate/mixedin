@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Mixins</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h1 id="mixins">Mixins</h1>
+<p>A set of mixins I seem to use on all projects.</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <h2 id="font-size">font-size</h2>
+<p>Sets the font-size in both <code>px</code> and <code>rem</code> units
+(based on the root <code>&lt;html&gt;</code> element being set to the equivalent of <code>10px</code>).</p>
+<h3 id="example-">Example:</h3>
+<pre><code class="lang-less"><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-selector-class">.font-size</span>(<span class="hljs-number">22</span>);
+}
+</code></pre>
+<p>which will output:</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">22px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2.2rem</span>;
+}
+</code></pre>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-selector-class">.font-size</span>(<span class="hljs-variable">@size</span>) {
+	<span class="hljs-attribute">font-size</span>: (<span class="hljs-variable">@size</span> * <span class="hljs-number">1px</span>);
+	<span class="hljs-attribute">font-size</span>: ((<span class="hljs-variable">@size</span> / <span class="hljs-number">10</span>) * <span class="hljs-number">1rem</span>);
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>This overload also sets the line-height to a unitless value that equals the pixel value specified.</p>
+<h3 id="example-">Example:</h3>
+<pre><code class="lang-less"><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-selector-class">.font-size</span>(<span class="hljs-number">20</span>, <span class="hljs-number">32</span>);
+}
+</code></pre>
+<p>which will output:</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2rem</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.6</span>;
+}
+</code></pre>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-selector-class">.font-size</span>(<span class="hljs-variable">@size</span>, <span class="hljs-variable">@line_height</span>) {
+	<span class="hljs-selector-class">.font-size</span>(<span class="hljs-variable">@size</span>);
+	<span class="hljs-attribute">line-height</span>: (<span class="hljs-variable">@line_height</span> / <span class="hljs-variable">@size</span>);
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
