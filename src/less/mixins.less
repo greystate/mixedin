@@ -1,0 +1,57 @@
+// # Mixins
+//
+// A set of mixins I seem to use on all projects.
+
+// ## font-size
+//
+// Sets the font-size in both `px` and `rem` units
+// (based on the root `<html>` element being set to the equivalent of `10px`).
+// 
+// ### Example:
+//
+// ```less
+// body {
+//   .font-size(22);
+// }
+// ```
+//
+// which will output:
+//
+// ```css
+// body {
+//   font-size: 22px;
+//   font-size: 2.2rem;
+// }
+// ```
+//
+
+.font-size(@size) {
+	font-size: (@size * 1px);
+	font-size: ((@size / 10) * 1rem);
+}
+
+// This overload also sets the line-height to a unitless value that equals the pixel value specified.
+//
+// ### Example:
+//
+// ```less
+// body {
+//   .font-size(20, 32);
+// }
+// ```
+//
+// which will output:
+//
+// ```css
+// body {
+//   font-size: 20px;
+//   font-size: 2rem;
+//   line-height: 1.6;
+// }
+// ```
+//
+
+.font-size(@size, @line_height) {
+	.font-size(@size);
+	line-height: (@line_height / @size);
+}
