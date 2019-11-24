@@ -91,6 +91,41 @@
             
         </li>
         
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <h2 id="visuallyhidden">visuallyHidden</h2>
+<p>I’ve had various versions of this one, to hide
+an element while keeping it accessible to screen
+readers end similar assistive technologies.
+The current version is from <a href="https://gist.github.com/hankchizljaw/fae40371ada3ea4301624091bf4379e9">this Gist</a> by Andy Bell.</p>
+<h3 id="example">Example</h3>
+<pre><code class="lang-less"><span class="hljs-selector-class">.sr-only</span> {
+    <span class="hljs-selector-class">.visuallyHidden</span>();
+}
+</code></pre>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-selector-class">.visuallyHidden</span>() {
+	<span class="hljs-attribute">border</span>: <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">clip</span>: rect(<span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>);
+	<span class="hljs-attribute">height</span>: auto;
+	<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">overflow</span>: hidden;
+	<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+	<span class="hljs-attribute">position</span>: absolute;
+	<span class="hljs-attribute">width</span>: <span class="hljs-number">1px</span>;
+	<span class="hljs-attribute">white-space</span>: nowrap;
+}</pre></div></div>
+            
+        </li>
+        
     </ul>
   </div>
 </body>
