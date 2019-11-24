@@ -55,3 +55,30 @@
 	.font-size(@size);
 	line-height: (@line_height / @size);
 }
+
+// ## visuallyHidden
+//
+// I've had various versions of this one, to hide
+// an element while keeping it accessible to screen
+// readers end similar assistive technologies.
+// The current version is from [this Gist](https://gist.github.com/hankchizljaw/fae40371ada3ea4301624091bf4379e9) by Andy Bell.
+//
+// ### Example
+// ```less
+// .sr-only {
+// 	.visuallyHidden();
+// }
+// ```
+//
+
+.visuallyHidden() {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
