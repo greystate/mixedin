@@ -22,7 +22,11 @@
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
               <h1 id="mixins">Mixins</h1>
-<p>A set of mixins I seem to use on all projects.</p>
+<p>A set of mixins I seem to use on all projects.
+They’re all created as “functions” so they need to be
+called from the importing Less file to generate any output.
+Which also means that merely importing this file without
+using any of the mixins, won’t add anything to your final CSS.</p>
 
             </div>
             
@@ -122,6 +126,37 @@ The current version is from <a href="https://gist.github.com/hankchizljaw/fae403
 	<span class="hljs-attribute">position</span>: absolute;
 	<span class="hljs-attribute">width</span>: <span class="hljs-number">1px</span>;
 	<span class="hljs-attribute">white-space</span>: nowrap;
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <h2 id="centered">centered</h2>
+<p>This centers an element horizontally using auto margins.
+An optional <code>width</code> parameter can be specified.</p>
+<h3 id="example">Example</h3>
+<pre><code class="lang-less"><span class="hljs-selector-tag">main</span> {
+    <span class="hljs-selector-class">.centered</span>(<span class="hljs-number">62ch</span>);
+}
+</code></pre>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-selector-class">.centered</span>() {
+	<span class="hljs-attribute">margin-right</span>: auto;
+	<span class="hljs-attribute">margin-left</span>: auto;
+}
+
+<span class="hljs-selector-class">.centered</span>(<span class="hljs-variable">@width</span>) {
+	<span class="hljs-selector-class">.centered</span>();
+	<span class="hljs-attribute">max-width</span>: <span class="hljs-variable">@width</span>;
 }</pre></div></div>
             
         </li>
